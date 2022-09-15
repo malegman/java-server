@@ -55,7 +55,6 @@ public class HttpServerRequest {
         }
         final var bytes = new byte[availableBytes];
         is.read(bytes);
-        is.close();
         final var content = new String(bytes);
 
         final var mhMatcher = MAIN_HEADER_PATTERN.matcher(content);
