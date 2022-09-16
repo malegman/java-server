@@ -16,7 +16,11 @@ public record HttpResponse(String protocol, HttpResponseStatus status,
             stringBuilder.deleteCharAt(stringBuilder.lastIndexOf(";")).append("\r\n");
         });
 
-        return stringBuilder.append("\r\n").append(this.body).toString();
+        if (this.body != null) {
+            stringBuilder.append("\r\n").append(this.body);
+        }
+
+        return stringBuilder.toString();
     }
 
     public static HttpResponseBuilder builder() {

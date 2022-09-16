@@ -13,8 +13,8 @@ public final class HttpServer extends Server {
     private final static HttpResponse DEFAULT_HTTP_RESPONSE = HttpResponse.builder()
             .protocol("HTTP/1.1")
             .status(HttpResponseStatus.HRS_NOT_FOUND)
-            .header("Content-Type", "text/html")
             .header("Connection", "keep-alive")
+            .header("Content-Type", "text/html")
             .body("""
                         <html>
                         <head><title>404 Not Found</title></head>
